@@ -30,14 +30,24 @@ public class Trabalho_2{
 			x = verificaMelhor(R, j);
 			if(head > Ci[x]){	
 				System.out.println("Inicio do Jogo");
-				while(head >= Ci[x] && head > 0){
-					head = head - R[x];
-					count ++;
+				System.out.println("1 - Melhor ataque: "+Ci[x]);
+				while(head > Ci[x] && head >  0){
+					if(head == Ci[x]){
+						System.out.println("Golpe Final");
+						head = head - Ci[x];
+					}
+					else{
+						head = head - R[x];
+						count ++;
+					}
 				}
 			}else{	
 				j = x;
 				x = verificaMelhor(R, j);
-				while(head >= Ci[x] && head >  0){
+				System.out.println("2 - Melhor ataque: "+Ci[x]);
+				while(head > Ci[x] && head >  0){
+					if(head == Ci[x])
+						head = head - Ci[x];
 					head = head - R[x];
 					count ++;
 				}
@@ -61,8 +71,6 @@ public class Trabalho_2{
 		int index = 0;
 		if(x == -1){
 			for(int i=0; i<G; i++){
-				if(r[i] < -1)
-					r[i] = r[i] * (-1);
 				if(aux < r[i]){
 					aux = r[i];
 					index = i;
@@ -70,8 +78,6 @@ public class Trabalho_2{
 			}
 		}else{
 			for(int i=0; i<G; i++){
-				if(r[i] < -1)
-					r[i] = r[i] * (-1);
 				if(aux < r[i] && i != x){
 					aux = r[i];
 					index = i;
