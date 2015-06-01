@@ -33,10 +33,11 @@ public class Hash{
 	}
 	public static void imprimeHash(){
 		for(int i=0; i<10; i++){
-			System.out.print(hash[i].valor);
 			No p = hash[i];
-			while(p != null)
+			while(p != null){
 				System.out.print(p.valor+" ");
+				p = p.prox;
+			}
 			System.out.println();
 		}
 	}
